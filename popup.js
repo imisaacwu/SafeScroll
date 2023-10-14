@@ -8,8 +8,9 @@ chrome.storage.sync.set({'nameInTheStorage' : jsVariables}, function(){
       console.log("Error.");
   }
 });*/
-
+let past_user_inputs = []
 function returnText(){
   let input = document.getElementById("userInput").value
-  
+
+  past_user_inputs.push(input)
 }

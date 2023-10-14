@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="tailwind.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.tailwindcss.com/; report-uri /csp-report-endpoint;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeScroll</title>
 </head>
@@ -69,7 +71,7 @@
       
           <div class="topnav">
             <textarea style="font-family:Arial, Helvetica, sans-serif; height: 250px; width: 300px" type="text"
-              placeholder="Enter words you don't want to see..." id="value"></textarea>
+              placeholder="Enter words you don't want to see..." id="userInput"></textarea>
           </div>
           <button style="border-radius: 5px;color:black;background-color: #b79ee9;" onclick="returnText()" >Submit</button>
         </form>
@@ -77,8 +79,9 @@
       
         <a target="_blank" type="button"
           href="https://docs.google.com/document/d/1tG7YKRfVwEg_GuRVEYNAiYZk47mZ89l3RCeW9LhmE1c/edit?usp=sharing">
-          <button style="">?</a>
-       
+          <button style="float: right">?</a>
+        <button class="bg-indigo-500 text-white px-4 py-2 rounded-lg m-8 hover:bg-indigo-700 transition-all duration-500 hover:scale-90">This is a button </button>
+
         <script src="popup.js"></script>
       
       </body>
