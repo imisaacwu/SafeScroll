@@ -1,18 +1,15 @@
-var urlMapping = {
-    fake: "./nextpage.html",
-    true: "./truepage.html",
-  };
-  
-  var a = 0;
-  function count() {
-    a++;
-    var value = document.getElementById("value").value;
-    console.log(value);
-    if (value == "fake") {
-      window.location = urlMapping["true"];
-    } else {
-      window.location = urlMapping["fake"];
-    }
+
+//var userInput = prompt ("...");
+/*
+var countDownDate = new Date(userInput).getTime();
+
+chrome.storage.sync.set({'nameInTheStorage' : jsVariables}, function(){
+  if(chrome.runtime.error){
+      console.log("Error.");
   }
-  document.getElementById("submit-form").onclick = count;
-  
+});*/
+
+function returnText(){
+  let input = document.getElementById("userInput").value
+  alert(input)
+}
