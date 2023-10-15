@@ -92,6 +92,8 @@ function addTask(isDone) {
     updateView();
 }
 
+
+
 // function editTask(id) {
 //     consol
 //     const taskIndex = parseInt(id[0]);
@@ -107,17 +109,27 @@ function addTask(isDone) {
 function deleteTask(id, name) {
     console.log("ID" + id);
     const taskIndex = parseInt(id[0]);
-    taskArr.splice(taskIndex, 1);
-    localStorage.setItem("savedTasks", JSON.stringify(taskArr));
-    updateView();
-
-    const valueToDelete = 3;
-
+    
+    // Get the taskButton to be deleted
+    const taskButton = document.getElementById(id);
+    
+    // Add the fade-out animation class
+    taskButton.classList.add("gradual-fade-out-animation");
+    
+    // After the animation duration, remove the button from the DOM
+    setTimeout(() => {
+      taskArr.splice(taskIndex, 1);
+      localStorage.setItem("savedTasks", JSON.stringify(taskArr));
+      updateView();
+      taskButton.remove();
+    }, 500); // Adjust this duration to match your animation duration
+    
     const indexToDelete = words.indexOf(name);
     if (indexToDelete !== -1) {
-    words.splice(indexToDelete, 1);
-}
-}
+      words.splice(indexToDelete, 1);
+    }
+  }
+  
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -140,3 +152,4 @@ document.getElementById("task-clear-btn").addEventListener("click", () => {
     taskArr = [];
     updateView();
 })
+
