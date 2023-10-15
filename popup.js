@@ -1,13 +1,3 @@
-
-//var userInput = prompt ("...");
-/*
-var countDownDate = new Date(userInput).getTime();
-
-chrome.storage.sync.set({'nameInTheStorage' : jsVariables}, function(){
-  if(chrome.runtime.error){
-      console.log("Error.");
-  }
-});*/
 let past_user_inputs = []
 function returnText(){
   let input = document.getElementById("userInput").value
@@ -15,12 +5,9 @@ function returnText(){
   past_user_inputs.push(input)
 }
 
-
-
 var taskArr = [];
 
 const updateView = () => {
-
     const tasksList = document.getElementById("tasksList");
 
     var child = tasksList.lastChild;
@@ -30,7 +17,6 @@ const updateView = () => {
     }
 
     taskArr.forEach((Element, index) => {
-
         const newTask = document.createElement("div");
         newTask.setAttribute("class", "task-div");
 
@@ -54,15 +40,8 @@ const updateView = () => {
         taskDelete.setAttribute("class", "task-btn task-btn-delete");
         taskDelete.addEventListener("click", (event) => deleteTask(event.target.id));
 
-        // const taskDo = document.createElement("button");
-        // taskDo.innerHTML = Element.isDone ? "Undo" : "Done";
-        // taskDo.setAttribute("id", index + "do");
-        // taskDo.setAttribute("class", "task-btn task-btn-do");
-        // taskDo.addEventListener("click", (event) => doTask(event.target.id));
-
         taskControls.appendChild(taskEdit);
         taskControls.appendChild(taskDelete);
-        // taskControls.appendChild(taskDo);
 
         newTask.appendChild(taskText);
         newTask.appendChild(taskControls);
@@ -99,14 +78,6 @@ const deleteTask = (id) => {
 
     const taskIndex = parseInt(id[0]);
     taskArr.splice(taskIndex, 1);
-    localStorage.setItem("savedTasks", JSON.stringify(taskArr));
-    updateView();
-}
-
-const doTask = (id) => {
-
-    const taskIndex = parseInt(id[0]);
-    taskArr[taskIndex].isDone = !taskArr[taskIndex].isDone;
     localStorage.setItem("savedTasks", JSON.stringify(taskArr));
     updateView();
 }
