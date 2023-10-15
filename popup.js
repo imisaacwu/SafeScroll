@@ -37,6 +37,7 @@ const updateView = () => {
         const taskText = document.createElement("div");
         taskText.setAttribute("class", Element.isDone ? "task-text task-completed" : "task-text");
         taskText.innerHTML = (index + 1) + ". " + Element.task;
+        taskText.style.fontSize = "12px";
 
         const taskControls = document.createElement("div");
         taskControls.setAttribute("class", "task-controls");
