@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>  
-
-        #diamond {
-          stroke: #0074D9; /* Outline color */
-          fill: none;
-          stroke-width: 2;
-          stroke-dasharray: 500;
-          stroke-dashoffset: 500;
-          animation: drawDiamond 5s ease-in forwards;
-        }
-    
-        @keyframes drawDiamond {
-          to {
-            stroke-dashoffset: 0;
-          }
-        }
-      </style>
     <script src="tailwind.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,20 +14,18 @@
         <h3 class="mb-10 text-2xl"><i>the Chrome Extension that lets you scroll at ease</i></h3>
 
         <nav class="mt-4">
-            <p><a class="hover:underline" href="#about">about</a></p>
-            <p><a class="hover:underline" href="#why">inspiration</a></p>
-            <p><a class="hover:underline" href="#concept">mission</a></p>
+            <p><a class=" hover:text-red-500 hover:underline" href="#about">about</a></p>
+            <p><a class="hover:text-blue-500 hover:underline" href="#why">inspiration</a></p>
+            <p><a class="hover:text-green-500 hover:underline" href="#concept">mission</a></p>
         </nav>
         <svg class="animate-bounce w-6 h-6 text-indigo-500 mx-auto mt-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
        
         <h2 class="about"> </h2>
        
     <!--about section-->
         <section id="about">
-            <div class="pt-16"></div>
-            <div class="pt-16"></div>
             <div class="pt-10"></div>
             <h2 class="font-mono text-center text-2xl pt-16">about</h2>
             <h1 class="firstSectionH1  font-mono text-center text-7xl">An AI-powered extension that automatically <span class="hover-blur">blurs</span> potentially triggering words/segments of articles.</h1>
