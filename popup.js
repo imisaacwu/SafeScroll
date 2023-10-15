@@ -1,25 +1,7 @@
 
-//var userInput = prompt ("...");
-/*
-var countDownDate = new Date(userInput).getTime();
-
-chrome.storage.sync.set({'nameInTheStorage' : jsVariables}, function(){
-  if(chrome.runtime.error){
-      console.log("Error.");
-  }
-});*/
-let past_user_inputs = []
-function returnText(){
-  let input = document.getElementById("userInput").value
-
-  past_user_inputs.push(input)
-}
-
-
-
 var taskArr = [];
 
-const updateView = () => {
+function updateView() {
 
     const tasksList = document.getElementById("tasksList");
 
@@ -68,21 +50,28 @@ const updateView = () => {
 
         tasksList.appendChild(newTask);
     });
+    chrome.tabs.query({}, tabs => {
+        tabs.forEach(tab => {
+        chrome.tabs.sendMessage(tab.id, taskArr);
+      });
+    });
+    
 }
 
-const addTask = (isDone) => {
+function addTask(isDone) {
 
-    const task = document.getElementById("task-input").value;
+    const task = document.getElementById("task-input").value.toLowerCase();
     if(task === null || task.trim() === "") return;
     taskArr.push({task, isDone});
     localStorage.setItem("savedTasks", JSON.stringify(taskArr));
     updateView();
+    
 
     const taskInput = document.getElementById("task-input");
     taskInput.value = "";
 }
 
-const editTask = (id) => {
+function editTask(id) {
 
     const taskIndex = parseInt(id[0]);
     const taskText = taskArr[taskIndex].task;
@@ -94,7 +83,7 @@ const editTask = (id) => {
     taskInput.value = taskText;
 }
 
-const deleteTask = (id) => {
+function deleteTask(id) {
 
     const taskIndex = parseInt(id[0]);
     taskArr.splice(taskIndex, 1);
@@ -102,7 +91,7 @@ const deleteTask = (id) => {
     updateView();
 }
 
-const doTask = (id) => {
+function doTask(id) {
 
     const taskIndex = parseInt(id[0]);
     taskArr[taskIndex].isDone = !taskArr[taskIndex].isDone;
