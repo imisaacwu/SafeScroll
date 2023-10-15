@@ -54,15 +54,15 @@ const updateView = () => {
         taskDelete.setAttribute("class", "task-btn task-btn-delete");
         taskDelete.addEventListener("click", (event) => deleteTask(event.target.id));
 
-        const taskDo = document.createElement("button");
-        taskDo.innerHTML = Element.isDone ? "Undo" : "Done";
-        taskDo.setAttribute("id", index + "do");
-        taskDo.setAttribute("class", "task-btn task-btn-do");
-        taskDo.addEventListener("click", (event) => doTask(event.target.id));
+        // const taskDo = document.createElement("button");
+        // taskDo.innerHTML = Element.isDone ? "Undo" : "Done";
+        // taskDo.setAttribute("id", index + "do");
+        // taskDo.setAttribute("class", "task-btn task-btn-do");
+        // taskDo.addEventListener("click", (event) => doTask(event.target.id));
 
         taskControls.appendChild(taskEdit);
         taskControls.appendChild(taskDelete);
-        taskControls.appendChild(taskDo);
+        // taskControls.appendChild(taskDo);
 
         newTask.appendChild(taskText);
         newTask.appendChild(taskControls);
