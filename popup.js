@@ -153,3 +153,41 @@ document.getElementById("task-clear-btn").addEventListener("click", () => {
     updateView();
 })
 
+//SECOND POPUP that appears at the top of a webpage 
+let previousLength = taskArr.length; //use to keep track of taskArr changes 
+function checkArrayLength() {
+    if (myArray.length !== previousLength) {
+      openWarningPopup();
+      previousLength = myArray.length;
+    }
+  }
+  setInterval(checkArrayLength, 1000); // Check every second
+
+const arrayProxy = new Proxy(taskArr, {
+    set(target, prop, value) {
+      if (prop === 'length' && (target[prop] === 0 || value === 0)) {
+        if (target[prop] !== value) {
+            console.log("SHOULD OPEN WARNING POPUP");
+          openWarningPopup();
+        }
+      }
+      target[prop] = value;
+      return true;
+    },
+  });
+document.getElementById('showWarningButton').addEventListener('click', function() {
+    chrome.runtime.sendMessage({ openWarningPopup: true });
+  });
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.openWarningPopup) {
+      // Open the warning popup
+      chrome.windows.create({
+        type: 'popup',
+        url: 'warning-popup.html',
+        width: 300,
+        height: 200,
+        left: Math.round((screen.width - 300) / 2),
+        top: Math.round((screen.height - 200) / 2),
+      });
+    }
+  });
