@@ -4,6 +4,8 @@
 ## What it does
 SafeScroll is a Google Chrome extension that blurs certain content, which can be customized using the extension interface. When you first open the extension, there is a text box where you can add in the words and delete them when needed. Once you enter the words, you can go ahead and scroll through the Internet safely! Also, our extension has a toggle blur where you can turn off the function but keep the word box if someone happens to use your laptop.
 
+![SafeScroll Demo](https://cdn.discordapp.com/attachments/1162813949436239902/1163168075529601034/image.png?ex=653e97af&is=652c22af&hm=d4a1dd6e0f92d6d2f589bebca8e7b828105d15810453f0ee8c36fb9e648df2ed&)
+
 ## Inspiration
 Many websites often contain triggering content with no warning, which can cause viewers to relive or be reminded of traumatic/triggering memories. Our initial idea was that we wanted to tackle body dysmorphia and overall had a goal to blur/remove any triggering content on a webpage and give the user a warning before viewing the page.
 
