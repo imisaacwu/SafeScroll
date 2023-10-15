@@ -35,6 +35,10 @@ nav {
     margin: 0 auto;
 }
 
+nav a {
+    color: black;
+}
+
 p{
     font-size: 20px;
     font-family: Monaco;
@@ -44,15 +48,32 @@ p{
     justify-content: center;
     align-items: stretch;
     padding-bottom: 100px;
-
-   
 }
 
 .firstSectionH1{
     padding-top: 300px;
     padding-bottom: 250px;
-    
 }
+
+.hover-blur {
+    filter:blur(15px);
+}
+
+.hover-blur:hover {
+    animation: .4s linear unblur;
+    filter: blur(0px);
+}
+
+@keyframes unblur {
+    0% {
+        filter:blur(15px);
+    }
+
+    100% {
+        filter:blur(0px);
+    }
+}
+
 .secondSectionH1{
     padding-top: 90px;
     padding-bottom: 250px;

@@ -19,12 +19,12 @@ function updateView() {
             const taskButton = document.createElement("button");
             taskButton.textContent = Element.task;
             taskButton.setAttribute("class", "group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow");
+
+            const buttonText = document.createElement("span");
+            buttonText.setAttribute("class", "relative text-black group-hover:text-white");
             
             const redBackground = document.createElement("div");
             redBackground.setAttribute("class", "absolute inset-0 w-0 bg-red-500 transition-all duration-400ms ease-in-out group-hover:w-full");
-            
-            const buttonText = document.createElement("span");
-            buttonText.setAttribute("class", "relative text-black group-hover:text-black");
             
             // Add a click event listener to the taskButton
             taskButton.addEventListener("click", (event) => deleteTask(taskButton.getAttribute("id"), taskButton.textContent));
