@@ -128,7 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 document.getElementById("task-submit-btn").addEventListener("click", () => addTask(false));
-
+document.getElementById('task-input').addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    console.log('Enter key pressed!');
+    addTask(false); 
+  }
+});
 document.getElementById("task-clear-btn").addEventListener("click", () => {
 
     localStorage.clear();
