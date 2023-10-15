@@ -1,6 +1,6 @@
 /* *{
     border: 1px solid #585858;
-}   */
+}    */
 
 @media (prefers-reduced-motion: no-preference) {
     * {
@@ -51,8 +51,12 @@ p{
 }
 
 .firstSectionH1{
-    padding-top: 300px;
+    padding-top: 20px;
     padding-bottom: 250px;
+}
+
+.about{
+    padding-top: 300px;
 }
 
 .hover-blur {
