@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        #diamond {
+          stroke: #0074D9; /* Outline color */
+          fill: none;
+          stroke-width: 2;
+          stroke-dasharray: 500;
+          stroke-dashoffset: 500;
+          animation: drawDiamond 5s ease-in forwards;
+        }
+    
+        @keyframes drawDiamond {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      </style>
+    <script src="tailwind.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Safe Scroll</title>
+    <title class="text-9xl">SafeScroll</title>
 </head>
 <body>
-        <h1 class="mtn">Safe Scroll</h1>
-        <h3>the Chrome Extension that lets you scroll at ease</h3>
-        
-        <nav>
+
+        <h1 class="mb-4 text-8xl hover:underline hover:underline-offset-2">SafeScroll</h1>
+
+        <h3 class="mb-4 text-2xl"><i>the Chrome Extension that lets you scroll at ease</i></h3>
+
+        <nav class="mt-4">
             <p><a href="#about">about</a></p>
             <p><a href="#why">why?</a></p>
             <p><a href="#concept">concept</a></p>
         </nav>
+        <svg class="animate-bounce w-6 h-6 text-indigo-500 mx-auto mt-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
        
         <h2 class="about"> </h2>
        
