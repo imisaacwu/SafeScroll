@@ -1,0 +1,15 @@
+{
+  "name": "safescroll",
+  "version": "1.0.0",
+  "description": "Many websites often contain triggering content with no warning, which can cause viewers to relive or be reminded of traumatic/triggering memories. Our goal is to blur/remove any triggering content on a webpage, and give the user a warning before viewing the page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openai": "^4.12.1"
+  }
+}
