@@ -7,11 +7,13 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.tailwindcss.com/; report-uri /csp-report-endpoint;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeScroll</title>
+
+      
 </head>
 
 
 <body>
-
+   
 
     <body style="background-color: #4b2e83;">
         <style type="text/css">
@@ -64,29 +66,53 @@
         justify-content: center">
         <h1 style="color:white; flex: auto;">SafeScroll</h1>
         
+        <div class="input-div">
+            <input type="text" id="task-input" class="task-input" style="font-family:Arial, Helvetica, sans-serif; height: 250px; width: 300px" class="task-input" placeholder="Enter trigger words"/>
+            <button id="task-submit-btn" class="task-btn task-btn-submit">Add</button>
+        </div>
+        <div class="tasks-list-div" id="tasksList"></div>
+        <div class="task-clear-div">
+            <button id="task-clear-btn" class="task-btn task-btn-clear">Clear All</button>
+        </div>
+
+        
         <h4 style="text-align:center;color:#bad2e0; font-family:Arial, Helvetica, sans-serif; font-style:italic"></h4>
         <h5 style="font-family:Arial, Helvetica, sans-serif; color:lightgray"></h5>
       
+          
+
+
+
         <form>
-      
+        
+        </div>
+
           <div class="topnav">
-            <textarea style="font-family:Arial, Helvetica, sans-serif; height: 250px; width: 300px" type="text"
-              placeholder="Enter words you don't want to see..." id="userInput"></textarea>
+            
+            <!--<textarea input type="text" id="task-input" class="task-input" style="font-family:Arial, Helvetica, sans-serif; height: 250px; width: 300px" type="text"
+              placeholder="Enter words you don't want to see..." id="userInput"></textarea>-->
           </div>
           <button style="border-radius: 5px;color:black;background-color: #b79ee9;" onclick="returnText()" >Submit</button>
-        </form>
-      
-      
-        <a target="_blank" type="button"
+ 
+          <a target="_blank" type="button"
           href="https://docs.google.com/document/d/1tG7YKRfVwEg_GuRVEYNAiYZk47mZ89l3RCeW9LhmE1c/edit?usp=sharing">
           <button style="float: right">?</a>
-        <button class="bg-indigo-500 text-white px-4 py-2 rounded-lg m-8 hover:bg-indigo-700 transition-all duration-500 hover:scale-90">This is a button </button>
 
+        <button class="bg-indigo-500 text-white px-4 py-2 rounded-lg m-8 hover:bg-indigo-700 transition-all duration-500 hover:scale-90">submit </button>
+      
         <script src="popup.js"></script>
       
+      
+        </form>
+
+        
+    
       </body>
       
+      
 </body>
+
+</div> 
 </html>
 
 
