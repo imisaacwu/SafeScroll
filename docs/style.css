@@ -1,0 +1,64 @@
+/* *{
+    border: 1px solid #585858;
+}   */
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+h1{
+    text-align: center;
+    padding-top: 250px;
+    font-size: 90px;
+    font-family: Monaco;
+    font-weight: 100;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h3{
+    color: #585858;
+    font-size: 20px;
+    font-family: Monaco;
+    font-weight: 200;
+    text-align: center;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 25%;
+    margin: 0 auto;
+}
+
+p{
+    font-size: 20px;
+    font-family: Monaco;
+    font-weight: 200;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding-bottom: 100px;
+
+   
+}
+
+.firstSectionH1{
+    padding-top: 300px;
+    padding-bottom: 250px;
+    
+}
+.secondSectionH1{
+    padding-top: 90px;
+    padding-bottom: 250px;
+}
+.thirdSectionH1{
+    padding-top: 20px;
+
+   
+}

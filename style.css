@@ -1,0 +1,179 @@
+html {
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  width: 300px;
+  font-family: 'Lato', sans-serif;
+  background-color: #4b2e83;
+  padding: 0 2rem;
+}
+
+header {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.title {
+  padding-left: 10px;
+  font-family: 'Monaco';
+  font-size: 30px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+}
+
+.input-div {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.task-input {
+  width: 95%;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 1rem;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch div {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  left: 70px;
+  right: -150px;
+  top: 12px;
+}
+
+.tasks-list-div {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-bottom : solid 1px black;
+}
+
+.task-div:last-child {
+  padding-top: 10px;
+  border: 0;
+}
+
+.task-text {
+  color: white;
+}
+
+.task-controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.task-clear-div {
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0 1.5rem 0;
+}
+
+.task-btn {
+  min-width: 2rem;
+  background-color: #b7a57a;
+  padding: 0 2px;
+}
+
+.task-btn:not(:last-child) {
+  border-right : solid 1px black;
+}
+
+.task-btn:hover, .task-btn:focus {
+  background-color: #85754d;
+  color: white;
+}
+
+.task-input, .task-btn-edit {
+  border-radius: 7px 0 0 7px;
+}
+
+.task-btn-submit, .task-btn-delete {
+  border-radius: 0 7px 7px 0;
+}
+
+.task-btn-clear {
+  border-radius: 7px;
+}

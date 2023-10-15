@@ -12,13 +12,13 @@ function updateView() {
     }
 
     taskArr.forEach((Element, index) => {
-
         const newTask = document.createElement("div");
         newTask.setAttribute("class", "task-div");
 
         const taskText = document.createElement("div");
         taskText.setAttribute("class", Element.isDone ? "task-text task-completed" : "task-text");
         taskText.innerHTML = (index + 1) + ". " + Element.task;
+        taskText.style.fontSize = "12px";
 
         const taskControls = document.createElement("div");
         taskControls.setAttribute("class", "task-controls");
@@ -35,15 +35,8 @@ function updateView() {
         taskDelete.setAttribute("class", "task-btn task-btn-delete");
         taskDelete.addEventListener("click", (event) => deleteTask(event.target.id));
 
-        const taskDo = document.createElement("button");
-        taskDo.innerHTML = Element.isDone ? "Undo" : "Done";
-        taskDo.setAttribute("id", index + "do");
-        taskDo.setAttribute("class", "task-btn task-btn-do");
-        taskDo.addEventListener("click", (event) => doTask(event.target.id));
-
         taskControls.appendChild(taskEdit);
         taskControls.appendChild(taskDelete);
-        taskControls.appendChild(taskDo);
 
         newTask.appendChild(taskText);
         newTask.appendChild(taskControls);
