@@ -41,15 +41,17 @@ var BLUR_LEVELS = ["10px", "4px", "0px"];
 
 var article = document.querySelector("*")
 
-article.addEventListener("click",
-    (event) => {
-        var element = event.target;
-        if (element.className == "blur") {
-            blurElement(element);
-        }
-    },
-);
+//doesn't do anything 
+// article.addEventListener("click",
+//     (event) => {
+//         var element = event.target;
+//         if (element.className == "blur") {
+//             blurElement(element);
+//         }
+//     },
+// );
 
+//this code actually blurs stuff 
 function blurAll() {
     var toBeBlurred = document.querySelector("*").getElementsByClassName("blur");
     var len = toBeBlurred.length;
@@ -59,13 +61,37 @@ function blurAll() {
         element.style.webkitFilter = "blur(" + BLUR_LEVELS[0] + ")";
         element.setAttribute("blur-level", 0);
     }
+    var images = document.getElementsByTagName("img");
+    
+    for (var i = 0; i < images.length; i++) {
+        console.log("ONE MORE IMAGE");
+        var alt = images[i].alt; 
+        console.log("ALT: " + alt);
+        if(isWordInString(targetWords, alt)){
+            images[i].style.display = "none";
+        }
+        
+    }
 }
-
+function isWordInString(wordArray, bigString) {
+    bigString = bigString.toLowerCase(); 
+    for (let i = 0; i < wordArray.length; i++) {
+      if (bigString.toLowerCase().includes(wordArray[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
 function blurElement(element) {
     var elementBlurLevel = element.getAttribute("blur-level") || 0;
     var nextBlurLevel = (parseInt(elementBlurLevel) + 1) % BLUR_LEVELS.length;
 
     element.style.webkitFilter = "blur(" + BLUR_LEVELS[nextBlurLevel] + ")";
-
-    element.setAttribute("blur-level", nextBlurLevel);
+    console.log("BLURRING");
+    element.setAttribute("blur-level", nextBlurLevel)
+    // var images = document.getElementsByTagName("img");
+    // for (var i = 0; i < images.length; i++) {
+    //     console.log("ONE MORE IMAGE");
+    //     images[i].style.display = "none";
+    // }
 }
